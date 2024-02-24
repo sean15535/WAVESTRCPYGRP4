@@ -1,39 +1,13 @@
-#Oluwaseun as the group leader started with the greetings messages, variables, Open Account & Transfer
-a =[0,1,2,3,4,5,6,7,8,9]
-b =[9,8,7,6,5,4,3,2,1,0]
-c =[0,1,2,3,4,5,6,7,8,9]
-d =[9,8,7,6,5,4,3,2,1,0]
-e =[0,1,2,3,4,5,6,7,8,9]
-f =[9,8,7,6,5,4,3,2,1,0]
-g =[0,1,2,3,4,5,6,7,8,9]
-h =[9,8,7,6,5,4,3,2,1,0]
-i =[0,1,2,3,4,5,6,7,8,9]
-j =[9,8,7,6,5,4,3,2,1,0]
+#Oluwaseun as the group leader started with the import command,  variables, for loop,greetings, Open Account & Transfer
+import random
 
-aa = a[9]
-bb = b[0:10]
-cc = c[2:9]
-dd = d[3:8]
-ee = e[-6:-1]
-ff = f[6:9]
-gg = g[4:9]
-hh = h[5:9]
-ii = i[6:9]
-jj = j[1:7]
+# Initialize an empty string to store the account number
+user_account = ""
 
-account_number = ''
-
-for aa in a:
-    for bb in b:
-        for cc in c:
-            for dd in d:
-                for ee in e:
-                    for ff in f:
-                        for gg in g:
-                            for hh in h:
-                                for ii in i:
-                                    for jj in j:
-                                         account_number = str(aa) + str(bb) + str(cc) + str(dd) + str(ee) + str(ff) + str(gg) + str(hh) + str(ii) + str(jj)  
+# Generate a random account number
+for _ in range(10):  # Generate 10 digits for the account number
+    digit = random.randint(0, 9)  # Generate a random digit between 0 and 9
+    user_account += str(digit)  # Append the digit to the account number
 print("Welcome to Wema Bank Plc. \nHow maywe help you today?")
 print("1. Open account\n2. Transfer\n3. Airtime\n4. Internet\n5. Balance\n6. Bills & Utitilies")
 response = str(input( )).lower()
@@ -46,9 +20,16 @@ if response == "1" or response == "open account":
     number = int(input("Your Phone number\n>> "))
     address = (input("your address\n>> ")).upper()
     dob = input("Your date of birth (MM/DD/YYYY)\n>> ")
-    print(f"Dear {firstname} {surname} {other_name}, your account was successfully created,\nyour account number is {account_number}\nThank you for choosing our bank")
+    print("\nThank you for filling out the form.")
+    print("Your account has been created successfully.")
+    print("Here is your account information:")
+    print(f"Name: {firstname} {other_name} {surname}")
+    print(f"Date of Birth: {dob}")
+    print("Address:", address)
+    print("Account Number:", user_account)
+    print("Thank you for choosing our bank")
 elif response == "2" or response == "transfer":
-    print("Choose the bank you are Transfering to: ")
+    print("Choose the bank you are Transfering to: /n1. GT Bank ")
 else:
     print("Invalid command")
 
