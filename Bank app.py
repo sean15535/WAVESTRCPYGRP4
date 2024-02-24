@@ -1,4 +1,8 @@
 #Oluwaseun as the group leader started with the import command,  variables, for loop,greetings, Open Account & Transfer
+# This program simulates a basic banking system for Wema Bank Plc.
+# It generates a random 10-digit account number for new accounts and offers options for account opening, transfers,
+# airtime purchases, internet banking, balance inquiries, and bill payments.
+
 import random
 
 # Initialize an empty string to store the account number
