@@ -4,6 +4,7 @@
 # airtime purchases, internet banking, balance inquiries, and bill payments.
 # Goodness worked on airtime and data, continue and logout, using variables, while loop etc. 
 # Emmanuel worked utilities and check balance
+from functions import username_login, phone_number_login
 print("WELCOME TO WEMA MOBILE APP")
 print("1. Login already existing account \n2. Open New Account/Sign Up")
 choose = int(input())
@@ -11,16 +12,9 @@ if choose == 1:
     print("\nLogin with: \n1. Username \n2. Phone number \n3. email")
     reply = int(input())
     if reply == 1:
-        response = str(input("Username: ")).capitalize()
-        click = str(input("Password: ")).lower()
-        print(f"Your login was successful, {response}")
+        username_login()
     elif reply == 2:
-        response = int(input("Phone Number: "))
-        num = 11
-        while response!=num:
-            click = str(input("Password: ")).lower()
-            print(f"Your login was successful, {response}")
-            break
+        phone_number_login()
     elif reply == 3:
         email = "@gmail.com"
         response = str(input(" ")).capitalize()
