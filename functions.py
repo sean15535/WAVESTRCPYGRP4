@@ -11,7 +11,7 @@ def generate_password():
      for _ in range(10):  # Generate 10 digits for the account number
         digit = random.randint(0, 9)  # Generate a random digit between 0 and 9
         result += str(digit) 
-        print(result)
+     return result
 
 def phone_number_login():
     response = int(input("Phone Number: "))
@@ -44,18 +44,22 @@ def create_account():
             if marital_status==1 or 2:
                 email = str(input("Email: "))
                 username = str(input("Username:"))
-                password = str(input("Password:"))
-                confirm_password = str(input("Confirm Password:"))
-                if password == confirm_password:
-                    print("\nThank you for filling out the form.")
-                    print("Your account has been created successfully.")
-                    print("Here is your account information:")
-                    print(f"Date of Birth: {date_of_birth}")
-                    print(f"Address: {home_address}")
-                    print(f"Phone number: {ph_num}") 
-                    print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {generate_password()}")                                                       
-                else: 
-                    print("Login Failed!")
+                password = input("Password: ")
+                confirm_password = input("Confirm Password: ")
+                while password != confirm_password:
+                    print("Passwords do not match!")
+                    password = input("Password: ")
+                    confirm_password = input("Confirm Password: ")
+
+                print("\nThank you for filling out the form.")
+                print("Your account has been created successfully.")
+                print("Here is your account information:")
+                print(f"Date of Birth: {date_of_birth}")
+                print(f"Address: {home_address}")
+                print(f"Phone number: {ph_num}") 
+                print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {generate_password()}")                                                       
+    
+                    
             else:
                 print("Error")
         else:
@@ -343,6 +347,17 @@ def utilities():
 
 def dashboard():
     print("Dashboard \n What would you like to do? \n1. Transfer \n2. Buy Airtime \n3. Buy Data \n4. Check Balance \n5. Utilities")
+    option = int(input())
+    if option == 1:
+        transfer()
+    elif option == 2:
+        buy_airtime()
+    elif option == 3:
+        buy_data()
+    elif option == 4:
+        account_balance()
+    elif option == 5:
+        utilities()
     return
 
 

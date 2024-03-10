@@ -23,25 +23,15 @@ elif  choose == 2:
      create_account()
 else:
     print("Invalid Request!")
-dashboard()
-option = int(input())
-if option == 1:
-   transfer()
-elif option == 2:
-    buy_airtime()
-elif option == 3:
-    buy_data()
-elif option == 4:
-    account_balance()
-elif option == 5:
-    utilities()
-print("Do you want to continue or logout?")
-print("1. Continue \n2. Logout")
-res = int(input("Option:"))
-if res==1:
-    dashboard()
-elif res==2:
+while True:
+    print("Do you want to continue or logout?")
+    print("1. Continue \n2. Logout")
+    res = int(input("Option:"))
+    if res==1:
+        dashboard()
+    elif res==2:
         print("You have logged out successfully, goodbye!")
+        break
 else:
         print("Invalid Response!")
    
