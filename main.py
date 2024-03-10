@@ -4,7 +4,7 @@
 # airtime purchases, internet banking, balance inquiries, and bill payments.
 # Goodness worked on airtime and data, continue and logout, using variables, while loop etc. 
 # Emmanuel worked utilities and check balance
-from functions import username_login, phone_number_login, email_login, create_account, transfer, buy_airtime, buy_data, account_balance
+from functions import username_login, phone_number_login, email_login, create_account, transfer, buy_airtime, buy_data, account_balance, utilities
 print("WELCOME TO WEMA MOBILE APP")
 print("1. Login already existing account \n2. Open New Account/Sign Up")
 choose = int(input())
@@ -34,38 +34,7 @@ elif option == 3:
 elif option == 4:
     account_balance()
 elif option == 5:
-    print("1. Pay Electricity bill \n2. Subscribe DSTV \n3. Other Billers")
-    ruj = int(input("Select option: "))
-    if ruj == 1:
-        cardnumber = int(input("Bill code: "))
-        bill=11
-        while cardnumber!=bill:
-            howmuch=int(input("Amount:#"))
-            print(f"Your #{howmuch} subscription was successful!")
-            break
-        else:
-            print("Invalid number")
-    elif ruj == 2:
-        code = int(input("Bill code: "))
-        bill=11
-        while code!=bill:
-            howmuch=int(input("Amount:#"))
-            print(f"Your #{howmuch} subscription was successful!")
-            break
-        else:
-            print("Invalid number")
-    elif ruj == 3:
-        biller_name=str(input("Biller name:")).capitalize()
-        billcode = int(input("Bill code: "))
-        bill=11
-        while billcode!=bill:
-            howmuch=int(input("Amount:#"))
-            print(f"Your #{howmuch} subscription from {biller_name} was successful!")
-            break
-        else:
-            print("Invalid number")
-    else:
-        print("Invalid Request!")
+    utilities()
 print("Do you want to continue or logout?")
 print("1. Continue \n2. Logout")
 res = int(input("Option:"))
