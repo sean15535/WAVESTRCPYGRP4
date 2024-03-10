@@ -5,6 +5,14 @@ def username_login():
     click = str(input("Password: ")).lower()
     print(f"Your login was successful, {response}")
 
+def generate_password():
+     number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+     result = ""
+     for _ in range(10):  # Generate 10 digits for the account number
+        digit = random.randint(0, 9)  # Generate a random digit between 0 and 9
+        result += str(digit) 
+        print(result)
+
 def phone_number_login():
     response = int(input("Phone Number: "))
     num = 11
@@ -39,18 +47,13 @@ def create_account():
                 password = str(input("Password:"))
                 confirm_password = str(input("Confirm Password:"))
                 if password == confirm_password:
-                    number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-                    result = ""
-                    for _ in range(10):  # Generate 10 digits for the account number
-                        digit = random.randint(0, 9)  # Generate a random digit between 0 and 9
-                        result += str(digit)  
                     print("\nThank you for filling out the form.")
                     print("Your account has been created successfully.")
                     print("Here is your account information:")
                     print(f"Date of Birth: {date_of_birth}")
                     print(f"Address: {home_address}")
                     print(f"Phone number: {ph_num}") 
-                    print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {result}")                                                       
+                    print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {generate_password()}")                                                       
                 else: 
                     print("Login Failed!")
             else:
