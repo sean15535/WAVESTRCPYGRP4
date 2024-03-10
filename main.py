@@ -4,7 +4,7 @@
 # airtime purchases, internet banking, balance inquiries, and bill payments.
 # Goodness worked on airtime and data, continue and logout, using variables, while loop etc. 
 # Emmanuel worked utilities and check balance
-from functions import username_login, phone_number_login, email_login, create_account, transfer, buy_airtime, buy_data
+from functions import username_login, phone_number_login, email_login, create_account, transfer, buy_airtime, buy_data, account_balance
 print("WELCOME TO WEMA MOBILE APP")
 print("1. Login already existing account \n2. Open New Account/Sign Up")
 choose = int(input())
@@ -32,14 +32,7 @@ elif option == 2:
 elif option == 3:
     buy_data()
 elif option == 4:
-    p=4
-    pin = int(input("Enter Transfer pin: "))
-    while pin != p:
-        print(f"{names}, your Account Balance is.....")
-        break
-    else:
-        print("Incorrect pin")
-        try_again = int(input("Enter Transfer pin: "))
+    account_balance()
 elif option == 5:
     print("1. Pay Electricity bill \n2. Subscribe DSTV \n3. Other Billers")
     ruj = int(input("Select option: "))
