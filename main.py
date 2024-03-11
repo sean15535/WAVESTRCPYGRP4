@@ -32,6 +32,5 @@ while True:
     elif res==2:
         print("You have logged out successfully, goodbye!")
         break
-else:
-        print("Invalid Response!")
+
    

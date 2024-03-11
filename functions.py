@@ -5,7 +5,7 @@ def username_login():
     click = str(input("Password: ")).lower()
     print(f"Your login was successful, {response}")
 
-def generate_password():
+def generate_account_number():
      number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
      result = ""
      for _ in range(10):  # Generate 10 digits for the account number
@@ -35,38 +35,38 @@ def create_account():
     names = first_name + last_name + other_names
     date_of_birth=input("Date of birth? \n Follow the format: day/month/year \n")
     home_address=input("Home Address: ")
-    ph_num=int(input("Phone Number: "))
-    lim=11
-    while ph_num!=lim:
-        sex=int(input("Sex: \n1. Male \n2. Female \n"))
-        if sex==1 or 2:
-            marital_status=int(input("Marital Status: \n1. Single \n2. Married \n "))
-            if marital_status==1 or 2:
-                email = str(input("Email: "))
-                username = str(input("Username:"))
+    ph_num = int(input("Phone Number: "))
+    length = 11
+    while len(ph_num) != lenght or not ph_num.isdigit():
+        print("Invalid Phone number!")
+        ph_num = int(input("ph_num: "))
+    sex=int(input("Sex: \n1. Male \n2. Female \n"))
+    if sex==1 or 2:
+        marital_status=int(input("Marital Status: \n1. Single \n2. Married \n "))
+        if marital_status==1 or 2:
+            email = str(input("Email: "))
+            username = str(input("Username:"))
+            password = input("Password: ")
+            confirm_password = input("Confirm Password: ")
+            while password != confirm_password:
+                print("Passwords do not match!")
                 password = input("Password: ")
                 confirm_password = input("Confirm Password: ")
-                while password != confirm_password:
-                    print("Passwords do not match!")
-                    password = input("Password: ")
-                    confirm_password = input("Confirm Password: ")
 
-                print("\nThank you for filling out the form.")
-                print("Your account has been created successfully.")
-                print("Here is your account information:")
-                print(f"Date of Birth: {date_of_birth}")
-                print(f"Address: {home_address}")
-                print(f"Phone number: {ph_num}") 
-                print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {generate_password()}")                                                       
+            print("\nThank you for filling out the form.")
+            print("Your account has been created successfully.")
+            print("Here is your account information:")
+            print(f"Date of Birth: {date_of_birth}")
+            print(f"Address: {home_address}")
+            print(f"Phone number: {ph_num}") 
+            print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {generate_account_number()}")                                                       
     
                     
-            else:
-                print("Error")
         else:
-            print("Invalid Command!")        
-        break
+            print("Error")
     else:
-        print("Error!")
+        print("Invalid Command!")        
+
 
 def transfer():
     print("Choose the bank you are Transfering to: \n1. GT Bank \n2. Eco Bank \n3. Access Bank \n4. Wema Bank \n5. United Bank For Africa \n6. Other Options ")
