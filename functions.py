@@ -32,12 +32,11 @@ def create_account():
     first_name = str(input("First name: ")).capitalize()
     last_name = str(input("Last name: ")).capitalize()
     other_names = str(input("Other names: ")).capitalize()
-    names = first_name + last_name + other_names
     date_of_birth=input("Date of birth? \n Follow the format: day/month/year \n")
     home_address=input("Home Address: ")
-    ph_num = int(input("Phone Number: "))
+    ph_num = input("Phone Number: ")
     length = 11
-    while len(ph_num) != lenght or not ph_num.isdigit():
+    while len(ph_num) != length or not ph_num.isdigit() or len(ph_num) > length:
         print("Invalid Phone number!")
         ph_num = int(input("ph_num: "))
     sex=int(input("Sex: \n1. Male \n2. Female \n"))
@@ -59,7 +58,7 @@ def create_account():
             print(f"Date of Birth: {date_of_birth}")
             print(f"Address: {home_address}")
             print(f"Phone number: {ph_num}") 
-            print(f"\nYour Login was Successful! \nWelcome, {names} \n Your account number is {generate_account_number()}")                                                       
+            print(f"\nYour Login was Successful! \nWelcome, {first_name}  {last_name}  {other_names} \n Your account number is {generate_account_number()}")                                                       
     
                     
         else:
